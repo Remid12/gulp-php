@@ -1,0 +1,11 @@
+.footer {
+	display: none;
+}
+
+.cookie-bar {
+	display: none;
+	
+	&.is-show {
+		display: block;
+	}
+}

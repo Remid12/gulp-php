@@ -1,0 +1,33 @@
+@mixin btn-apparence() {
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+}
+
+@mixin pseudo() {
+    position: absolute;
+    content: '';
+}
+
+@mixin objectFit() {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}
+
+@mixin pseudoAwesome($icon) {
+    position: absolute;
+    content: $icon;
+    font-family: FontAwesome;
+}
+
+@mixin transition($time){
+    transition: all $time ease-in-out;
+}

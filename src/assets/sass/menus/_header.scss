@@ -1,0 +1,33 @@
+$header-padding: 20px;
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: $header-padding;
+	z-index: 999;
+	
+	.inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		.logo {
+			width: 160px;
+			height: 40px;
+		}
+		
+		.menu {
+			&__item {
+				margin: 0 5px;
+				color: white;
+			}
+			
+			.btn {
+				margin-left: 15px;
+			}
+		}
+	}
+}
