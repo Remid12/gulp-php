@@ -35,7 +35,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('libs', function() {
-    return gulp.src([srcLibs+ 'jquery-2.2.4.min.js',
+    return gulp.src([srcLibs+ 'jquery-3.3.1.min.js',
                     srcLibs + 'jquery.cookie.js',
                     srcLibs + 'jquery.validate.min.js',
                     srcLibs + 'messages_fr.js',
@@ -45,11 +45,12 @@ gulp.task('libs', function() {
         .pipe(gulp.dest(src + 'assets/js/'));
 });
 
-gulp.task('default', ['sass', 'css', 'libs']);
+gulp.task('default', ['sass', 'css']);
 
 gulp.task('watch', function() {
     browserSync.init({
         proxy: "http://lff.loc/"
     });
-    gulp.watch([src + 'assets/**/*', src + '**/*.php'], ["sass"]).on("change", browserSync.reload);
+    gulp.watch([src + 'assets/**/*.scss'], ["sass"]).on("change", browserSync.reload);
+    gulp.watch([src + 'assets/**/*', src + '**/*.php']).on("change", browserSync.reload);
 });
