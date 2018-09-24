@@ -49,7 +49,8 @@ gulp.task('default', ['sass', 'css']);
 
 gulp.task('watch', function() {
     browserSync.init({
-        proxy: "http://lff.loc/"
+        proxy: "http://lff.loc/",
+        notify: false
     });
     gulp.watch([src + 'assets/**/*.scss'], ["sass"]).on("change", browserSync.reload);
     gulp.watch([src + 'assets/**/*', src + '**/*.php']).on("change", browserSync.reload);
