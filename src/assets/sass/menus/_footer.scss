@@ -1,11 +1,65 @@
 .footer {
-	display: none;
+	position: relative;
+	width: 100%;
+	padding: $section-padding*2 $section-padding;
+	
+	.inner {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: left;
+		overflow: hidden;
+	}
 }
 
 .cookie-bar {
-	display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: $color-lightgrey;
+    box-shadow: 0px -9px 38px -9px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 1002;
+    transform: translateZ(10px);
+    
+    .icon {
+        width: 30px;
+        margin-right: 40px;
+    }
+    
+    .message {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        font-weight: $font-bold;
+        margin-right: 40px;
+    }
+    
+    .close {
+        border: 0;
+        background: transparent;
+        border: 0;
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    &.is-visible {
+        display: flex;
+    }
 	
-	&.is-show {
-		display: block;
+	@media (max-width: 580px) {
+		&.is-visible {
+			display: block;
+			text-align: center;
+		}
+		
+		.message {
+			margin: 0;
+			margin-bottom: 15px;
+		}
 	}
 }

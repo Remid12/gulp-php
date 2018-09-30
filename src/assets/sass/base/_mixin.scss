@@ -1,33 +1,43 @@
 @mixin btn-apparence() {
-  appearance: none;
-  border: 0;
-  background-color: transparent;
+	appearance: none;
+	border: 0;
+	background-color: transparent;
 }
 
 @mixin pseudo() {
-    position: absolute;
-    content: '';
+	position: absolute;
+	content: '';
 }
 
 @mixin objectFit() {
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    font-family: 'object-fit: cover;';
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
 }
 
-@mixin pseudoAwesome($icon) {
-    position: absolute;
-    content: $icon;
-    font-family: FontAwesome;
-}
+@mixin center($position) {
+	position: absolute;
 
-@mixin transition($time){
-    transition: all $time ease-in-out;
+	@if $position=='vertical' {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	@else if $position=='horizontal' {
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	@else if $position=='both' {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }

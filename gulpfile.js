@@ -9,7 +9,7 @@ var browserSync = require('browser-sync').create();
 //Variable de chemins
 var src = 'src/';
 var srcLibs = 'src/assets/js/libs/'; //Dossier de travail
-var localUrl = 'http://lff.loc/';
+var localUrl = 'http://remidenimal.loc/';
 
 //Tache styles
 gulp.task('sass', function () {
@@ -41,7 +41,9 @@ gulp.task('libs', function() {
                     srcLibs + 'jquery.validate.min.js',
                     srcLibs + 'messages_fr.js',
                     srcLibs + 'ofi.min.js',
-                    srcLibs + 'flickity.pkgd.min.js'])
+                    srcLibs + 'in-view.min.js',
+                    srcLibs + 'flickity.pkgd.min.js'
+					])
         .pipe(concat('vendors.js'))
         .pipe(gulp.dest(src + 'assets/js/'));
 });

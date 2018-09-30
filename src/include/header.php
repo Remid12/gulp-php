@@ -1,15 +1,19 @@
 <header class="header">
     <div class="inner">
-       <img src="assets/images/logo-lff.png" alt="Logo" class="logo">
+       <img src="assets/images/logo-nasa.svg" alt="logo" class="logo">
        
-       <nav class="menu">
-       		<a href="" class="menu__item">Financial centre</a>
-       		<a href="" class="menu__item">Why luxembourg</a>
-       		<a href="" class="menu__item">events</a>
-       		<a href="" class="menu__item">Publications</a>
-       		<a href="" class="menu__item">Video Blog</a>
-       		<a href="" class="menu__item">MEDIA</a>
-       		<button class="btn btn-cta">Subscribe</button>
-       </nav>
+        <nav class="header-menu">
+		   <ul class="menu">
+				<li class="menu__item"><a href="">Home</a></li>
+				<li class="menu__item"><a href="">About</a></li>
+				<li class="menu__item"><a href="">Contact</a></li>
+				<li class="menu__item"><button class="btn btn-cta">Subscribe</button></li>
+				
+			</ul>
+		</nav>
+       
+       <button class="burger-menu">
+			<span class="burger"></span>
+		</button>
     </div>
 </header>

@@ -1,0 +1,66 @@
+.anim--cache {
+	position: relative;
+     
+    &:before {
+        position: absolute;
+		content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-lightgrey;
+        z-index: 999;
+		transform-origin: 0 0;
+        transition: transform 0.65s $easeOutCubic;
+        
+    }
+	
+	&.cache-white {
+		&:before {
+			background: white;
+		}
+	}
+
+	&.cache-blue {
+		&:before {
+			background: $color-blue;
+		}
+	}
+    
+    &.in-view {
+		overflow: hidden;
+		
+        &:before {
+            transform: scaleX(0);
+        }
+    }
+	
+	&.cache-vertical.in-view {
+		&:before{
+			transform: scale(1, 0);
+		}
+	}
+}
+
+.anim--block-up {
+	display: block;
+    opacity: 0;
+	will-change: transform;
+    transform: translateY(50px);
+	transform-origin: 100% 100%;
+    transition: all 0.65s $easeSmooth;
+    
+    &.in-view, &.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+	
+	+ .anim--block-up  {
+		@for $i from 2 through 20 {
+			&:nth-child(#{$i}){
+				transition-delay: $i*0.06s;
+			}
+		}
+	}
+}

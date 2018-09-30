@@ -5,28 +5,166 @@ $header-padding: 20px;
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: $header-padding;
-	z-index: 999;
-	
+	padding: $header-padding $section-padding;
+	z-index: 1010;
+
 	.inner {
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		
+
 		.logo {
-			width: 160px;
-			height: 40px;
+			position: relative;
+			width: 80px;
 		}
-		
+
 		.menu {
 			&__item {
-				margin: 0 5px;
-				color: white;
+				position: relative;
+				display: inline-block;
+				margin: 0 7px;
+				font-size: 0.75em;
+				font-weight: $font-bold;
+				text-transform: uppercase;
+				
+				.btn-cta {
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+}
+
+.burger-menu {
+	position: relative;
+	display: none;
+	width: 30px;
+	height: 20px;
+	cursor: pointer;
+	margin-left: 30px;
+	background: transparent;
+	border: 0;
+
+	.burger {
+		position: absolute;
+		background: $color-default;
+		width: 100%;
+		height: 2px;
+		top: 10px;
+		margin-top: -1px;
+		right: 0px;
+		opacity: 1;
+
+		&:before {
+			position: absolute;
+			background: $color-default;
+			width: 100%;
+			height: 2px;
+			top: -10px;
+			margin-top: -1px;
+			content: "";
+			display: block;
+			transition: transform .26s $easeSmooth;
+		}
+
+		&:after {
+			position: absolute;
+			background: $color-default;
+			width: 100%;
+			height: 2px;
+			bottom: -10px;
+			content: "";
+			display: block;
+			transition: transform .26s $easeSmooth;
+		}
+	}
+}
+
+@media(max-width: $mobile){
+	.header {
+		padding: 25px;
+	}
+}
+
+//Burger menu visible
+@media(max-width: $tablet){
+	.header {
+		.inner {
+			.header-menu {
+				position: fixed;
+				display: flex;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				min-height: 100vh;
+				background: rgba(#000, 0.75);
+				opacity: 0;
+				visibility: hidden;
+				overflow-y: scroll;
+				overflow-x: hidden;
+				cursor: pointer;
+				transition: opacity 0.2s linear;
+				z-index: -2;
+
+				.menu {
+					position: absolute;
+					display: block;
+					top: 0;
+					left: auto;
+					right: 0;
+					height: auto;
+					width: auto;
+					min-height: 100vh;
+					padding: 40px 80px;
+					padding-top: 120px;
+					background: #FFF;
+					cursor: default;
+					transform: translateX(100%);
+					transition: all 0.2s linear;
+
+					&__item {
+						position: relative;
+						display: block;
+						margin: 0;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+		
+		.burger-menu {
+			display: block;
+		}
+		
+		&.active {
+			.inner {
+				.header-menu {
+					opacity: 1;
+					visibility: visible;
+					
+					.menu {
+						transform: translateX(0);
+						transition: all 0.2s 0.2s linear;
+					}
+				}
 			}
 			
-			.btn {
-				margin-left: 15px;
+			.burger-menu {
+				.burger {
+					background: transparent;
+
+					&:after {
+						bottom: 0px;
+						transform: rotate(-45deg);
+					}
+
+					&:before {
+						top: 0px;
+						transform: rotate(45deg);
+					}
+				}
 			}
 		}
 	}

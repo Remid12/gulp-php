@@ -2,12 +2,11 @@ main {
     position: relative;
     display: block;
     width: 100%;
-    overflow-x: hidden;
 }
 
-section {
+section, .footer {
     position: relative;
-    padding: $section-padding 80px;
+    padding: $section-padding;
     max-width: 100%;
 
     .inner {
@@ -16,23 +15,15 @@ section {
         max-width: $max-width;
         margin: 0 auto;
     }
+	
+	&.bg-grey {
+		background: $color-lightgrey;
+	}
 }
 
-section.intro {
+.intro {
 	position: relative;
+	padding-top: $section-padding*2;
 	min-height: 80vh;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	
-	&:before {
-		position: absolute;
-		content: '';
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: black;
-		opacity: 0.4;
-	}
+	background: $color-lightgrey;
 }

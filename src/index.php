@@ -7,9 +7,9 @@
         <?php include('include/header.php'); ?>
 
         <main class="main">
-           <section class="intro" style="background-image: url(assets/images/visual-header-hp.jpg)">
+           <section class="intro">
                 <div class="inner">
-
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dignissimos amet eos, numquam reiciendis aliquid? Amet vitae necessitatibus tempore asperiores maiores aliquid accusantium, nisi culpa, aperiam voluptates, alias voluptas laboriosam.</p>
                 </div>
            </section>
         </main>

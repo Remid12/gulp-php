@@ -1,0 +1,37 @@
+.form-search {	
+	.row {
+		position: relative;
+		display: flex;
+		padding: 25px 0;
+		
+		input[type='text']{
+			width: 100%;
+			padding: 15px;
+			padding-right: 50px;
+			color: white;
+			font-size: 1.6rem;
+			font-weight: $font-medium;
+			background: transparent;
+			border:0;
+			border-bottom: 1px solid white;
+			
+			&::placeholder {
+				color: inherit;
+				opacity: .8;
+			}
+		}
+		
+		.btn {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			height: 100%;
+			padding: 2px 6px;
+			
+			svg {
+				fill: white;
+				width: 22px;
+			}
+		}
+	}
+}

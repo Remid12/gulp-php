@@ -13,66 +13,37 @@ html {
 h1.title-1 {
 	font-size: 2.62rem;
 	margin-bottom: 2.62rem;
-	font-weight: $font-bold;
-	text-transform: uppercase;
 }
 
 h2.title-2 {
 	font-size: 2rem;
 	margin-bottom: 2rem;
-	font-weight: $font-bold;
-	text-transform: uppercase;
 }
 
 h3.title-3 {
 	font-size: 1.5rem;
 	margin-bottom: 1.5rem;
-	font-weight: $font-book;
 }
 
 h4.title-4 {
 	font-size: 1.25rem;
 	margin-bottom: 1.25rem;
-	font-weight: $font-medium;
-}
-
-h5.title-5 {
-	font-size: .75rem;
-	margin-bottom: .75rem;
-	font-weight: $font-medium;
-	text-transform: uppercase;
 }
 
 p {
-	font-size: 1.07rem; //17px
-	margin-bottom: 1.07rem;
+	font-size: 1rem;
+	margin-bottom: 1rem;
 	
-	&.large {
-		font-size: 1.18rem;	
-	}
-	
-	&.chapo {
-		font-size: 1.375rem;
+	&.center {
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
+		margin-bottom: 1.07rem;
 	}
 }
 
 a {
-	color: $color-blue;
-}
-
-p a {
-	position: relative;
-	padding-bottom: 2px;
-	
-	&:after {
-		position: absolute;
-		content: '';
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		height: 1px;
-		border-top: 1px solid $color-blue;
-	}
+	color: $color-default;
 }
 
 b, strong {font-weight: $font-bold;}
@@ -83,29 +54,43 @@ blockquote {
 }
 
 .btn {
+	position: relative;
 	display: inline-block;
-	color: white;
+	padding: 14px 30px;
+	background: transparent;
+	color: $color-default;
 	font-size: 0.75rem;
 	font-weight: $font-bold;
 	text-transform: uppercase;
-	background: $color-blue;
-	padding: 14px 30px;
-	border: 2px solid $color-blue;
+	border: 2px solid $color-default;
 	cursor: pointer;
+	transition: transform 0.34s $easeSmooth;
 	
-	&.border {
-		color: $color-blue;
+	&-none {
 		background: transparent;
-		border: 2px solid $color-blue;
+		border: transparent;
+		padding: 0;
 	}
 	
-	&-cta {
-		background: $color-red;
-		border-color: $color-red;
-		
-		&.border {
-			color: $color-red;
-			border-color: $color-red;
+	&:after {
+		position: absolute;
+		content: '';
+		top: 8px;
+		left: 8px;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: -1;
+		background: inherit;
+		opacity: 0;
+		transform: translate(-8px, -8px);
+		transition: all 0.34s $easeSmooth;
+	}
+	
+	&:hover {
+		&:after {
+			transform: translate(0);
+			opacity: 0.65;
 		}
 	}
 }
@@ -114,9 +99,45 @@ blockquote {
     position: relative;
     width: 100%;
     text-align: center;
+	margin-top: 1rem;
     
     .btn {
         display: inline-block;
         margin: 0 auto;
     }
+	
+	.btn + .btn {
+		margin-left: 25px;
+	}
+}
+
+.svg-icons {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+	width: 1px;
+	height: 1px;
+}
+
+svg.icon {
+	position: relative;
+	width: 20px;
+	fill: $color-default;
+}
+
+
+
+//MEDIAS
+@media(max-width: $mobile){
+	h1.title-1 {
+		font-size: 2rem;
+		
+		&.big {
+			font-size: 2.8rem;
+		}
+	}
+	
+	h2.title-2 {
+		font-size: 1.7rem;
+	}
 }

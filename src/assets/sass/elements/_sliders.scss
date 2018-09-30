@@ -1,0 +1,42 @@
+[data-trigger='slider'] {
+	position: relative;
+	width: 100%;
+	
+	.flickity-prev-next-button {
+		position: absolute;
+		top: 50%;
+		background: $color-blue;
+		border: 0;
+		transform: translate(-22%, -50%);
+		cursor: pointer;
+		
+		.arrow {
+			fill: white;
+			transform: scale(0.55);
+			transform-origin: 50% 50%;
+		}
+		
+		&.next {
+			transform: translate(22%, -50%);
+			.arrow {
+				transform: scale(0.55) rotate(180deg);
+			}
+		}
+		
+		&:disabled {
+			background: $color-grey;
+			
+			svg {
+				opacity: 0.85;
+			}
+		}
+		
+		@media(max-width: $mobile){
+			transform: translate(-22%, -50%) scale(0.75);
+			
+			&.next {
+				transform: translate(22%, -50%)  scale(0.75);
+			}
+		}
+	}
+}
