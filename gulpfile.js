@@ -9,6 +9,7 @@ var browserSync = require('browser-sync').create();
 //Variable de chemins
 var src = 'src/';
 var srcLibs = 'src/assets/js/libs/'; //Dossier de travail
+var localUrl = 'http://lff.loc/';
 
 //Tache styles
 gulp.task('sass', function () {
@@ -49,7 +50,7 @@ gulp.task('default', ['sass', 'css']);
 
 gulp.task('watch', function() {
     browserSync.init({
-        proxy: "http://lff.loc/",
+        proxy: localUrl,
         notify: false
     });
     gulp.watch([src + 'assets/**/*.scss'], ["sass"]).on("change", browserSync.reload);
