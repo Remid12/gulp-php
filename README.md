@@ -18,6 +18,14 @@ WINDOWS: npm install
 LINUX: npm install
 ```
 
+### Configurer gulp
+Avant de lancer Gulp vous devez configurer le projet sur votre url MAMP (ou autre).
+Il faut modifier la ligne 12 du 'gulpfile.js' :
+```
+var localUrl = 'http://remidenimal.loc/';
+```
+En remplaçant par 'http://remidenimal.loc/' par votre url.
+
 ### Lancer gulp
 
 Une fois les dépendances installées, on peut compiler notre sass via les commandes définies dans le fichier 'gulpfile.js'.
